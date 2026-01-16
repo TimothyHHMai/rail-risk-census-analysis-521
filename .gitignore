@@ -1,0 +1,9 @@
+# Ignore CSV files only
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
