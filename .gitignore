@@ -1,9 +1,32 @@
-# Ignore CSV files only
-*.csv
-
-# Python
+# --- Python & System Garbage ---
 __pycache__/
-*.pyc
-
-# Jupyter
+*.py[cod]
+*$py.class
 .ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# --- Environments ---
+.env
+.venv
+env/
+venv/
+ENV/
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+
+# --- Project Specific ---
+# Ignore the scratch directory (local testing only)
+scratch/
+
+# Ignore raw CSVs (Force the use of Zips per group policy)
+*.csv
+*.xlsx
+
+# Allow Zip files (for compressed data storage)
+!*.zip
+
+# Allow the .gitkeep files we just made
+!*.gitkeep
