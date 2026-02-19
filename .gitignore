@@ -21,8 +21,8 @@ ENV/
 # Ignore the scratch directory (local testing only)
 scratch/
 
-# Ignore raw CSVs (Force the use of Zips per group policy)
-*.csv
+# DONT Ignore raw CSVs (Force the use of Zips per group policy)
+!*.csv
 *.xlsx
 
 # Allow Zip files (for compressed data storage)
