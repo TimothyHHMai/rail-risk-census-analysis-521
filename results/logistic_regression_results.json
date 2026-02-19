@@ -1,0 +1,34 @@
+{
+    "model": "Logistic Regression",
+    "best_version": "Baseline",
+    "baseline_f1": 0.4681042266809884,
+    "balanced_f1": 0.28453081700187116,
+    "best_f1": 0.4681042266809884,
+    "per_class_metrics": [
+        {
+            "Class": "E",
+            "Precision": 0.0,
+            "Recall": 0.0
+        },
+        {
+            "Class": "H",
+            "Precision": 0.506195623517005,
+            "Recall": 0.7069219440353461
+        },
+        {
+            "Class": "M",
+            "Precision": 0.611837048424289,
+            "Recall": 0.4497175141242938
+        },
+        {
+            "Class": "S",
+            "Precision": 0.0,
+            "Recall": 0.0
+        },
+        {
+            "Class": "T",
+            "Precision": 0.43392070484581496,
+            "Recall": 0.5228931652289317
+        }
+    ]
+}
