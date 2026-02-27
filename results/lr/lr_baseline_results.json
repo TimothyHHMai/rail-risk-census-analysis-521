@@ -1,45 +1,29 @@
 {
+    "experiment": "LR Baseline (with Accident Type)",
     "model": "Logistic Regression",
-    "best_version": "Baseline",
-    "features": [
-        "Weather Condition",
-        "Track Type",
-        "Visibility",
-        "Accident Type",
-        "Region",
-        "RUCC_2023"
-    ],
-    "categorical_features": [
-        "Weather Condition",
-        "Track Type",
-        "Visibility",
-        "Accident Type",
-        "Region"
-    ],
-    "numeric_features": [
-        "RUCC_2023"
-    ],
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Accident Type",
+            "Region"
+        ],
+        "numeric": [
+            "RUCC_2023"
+        ],
+        "total": 6
+    },
     "cv_folds": 5,
-    "baseline_cv_mean": 0.5358475652896496,
-    "baseline_cv_std": 0.004614009885208163,
-    "baseline_cv_scores": [
+    "cv_scores": [
         0.5351823850175927,
         0.5319692461156583,
         0.5319345919676616,
         0.5356095792409258,
         0.5445420241064095
     ],
-    "balanced_cv_mean": 0.4571479859518264,
-    "balanced_cv_std": 0.004460054864931015,
-    "balanced_cv_scores": [
-        0.4603396819468556,
-        0.45292386590116496,
-        0.45089353583598435,
-        0.46248890935810977,
-        0.45909393671701715
-    ],
-    "best_cv_mean": 0.5358475652896496,
-    "best_cv_std": 0.004614009885208163,
+    "cv_mean": 0.5358475652896496,
+    "cv_std": 0.004614009885208163,
     "per_class_metrics": [
         {
             "Cause": "E",
@@ -72,5 +56,14 @@
             "F1": 0.478
         }
     ],
-    "random_seed": 521
+    "random_seed": 521,
+    "balanced_cv_mean": 0.4571479859518264,
+    "balanced_cv_std": 0.004460054864931015,
+    "balanced_cv_scores": [
+        0.4603396819468556,
+        0.45292386590116496,
+        0.45089353583598435,
+        0.46248890935810977,
+        0.45909393671701715
+    ]
 }

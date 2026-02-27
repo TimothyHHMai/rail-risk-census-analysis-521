@@ -1,47 +1,28 @@
 {
+    "experiment": "CBA Baseline (with Accident Type)",
     "model": "CBA (Classification Based on Associations)",
-    "best_version": "Low Threshold",
-    "features": [
-        "Weather Condition",
-        "Track Type",
-        "Visibility",
-        "Accident Type",
-        "Region",
-        "RUCC_2023"
-    ],
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Accident Type",
+            "Region",
+            "RUCC_2023"
+        ],
+        "numeric": [],
+        "total": 6
+    },
     "cv_folds": 5,
-    "high_threshold": {
-        "min_support": 0.05,
-        "min_confidence": 0.7,
-        "min_lift": 2.0,
-        "cv_mean": 0.3744446418699795,
-        "cv_std": 0.0037677775351763,
-        "cv_scores": [
-            0.3767889740486533,
-            0.36950852729182543,
-            0.37671143181094835,
-            0.37884556177996503,
-            0.37036871441850533
-        ]
-    },
-    "low_threshold": {
-        "min_support": 0.02,
-        "min_confidence": 0.7,
-        "min_lift": 1.5,
-        "cv_mean": 0.5000738435598553,
-        "cv_std": 0.003173637409481581,
-        "cv_scores": [
-            0.5041246256986368,
-            0.49813620537835923,
-            0.49648044352688947,
-            0.49796893279705234,
-            0.5036590103983385
-        ]
-    },
-    "best_cv_mean": 0.5000738435598553,
-    "best_cv_std": 0.003173637409481581,
-    "n_rules": 299,
-    "default_class": "H",
+    "cv_scores": [
+        0.5041246256986368,
+        0.49813620537835923,
+        0.49648044352688947,
+        0.49796893279705234,
+        0.5036590103983385
+    ],
+    "cv_mean": 0.5000738435598553,
+    "cv_std": 0.003173637409481581,
     "per_class_metrics": [
         {
             "Cause": "E",
@@ -74,5 +55,35 @@
             "F1": 0.474
         }
     ],
-    "random_seed": 521
+    "n_rules": 299,
+    "default_class": "H",
+    "random_seed": 521,
+    "high_threshold": {
+        "min_support": 0.05,
+        "min_confidence": 0.7,
+        "min_lift": 2.0,
+        "cv_mean": 0.3744446418699795,
+        "cv_std": 0.0037677775351763,
+        "cv_scores": [
+            0.3767889740486533,
+            0.36950852729182543,
+            0.37671143181094835,
+            0.37884556177996503,
+            0.37036871441850533
+        ]
+    },
+    "low_threshold": {
+        "min_support": 0.02,
+        "min_confidence": 0.7,
+        "min_lift": 1.5,
+        "cv_mean": 0.5000738435598553,
+        "cv_std": 0.003173637409481581,
+        "cv_scores": [
+            0.5041246256986368,
+            0.49813620537835923,
+            0.49648044352688947,
+            0.49796893279705234,
+            0.5036590103983385
+        ]
+    }
 }
