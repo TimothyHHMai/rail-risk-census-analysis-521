@@ -1,0 +1,72 @@
+{
+    "experiment": "CBA No AT (undersampled & tuned, S=0.005, C=0.40)",
+    "model": "CBA (Classification Based on Associations)",
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Region",
+            "RUCC_Metro_Adjacency"
+        ],
+        "numeric": [],
+        "total": 5
+    },
+    "cv_folds": 5,
+    "cv_scores": [
+        0.4191690513450417,
+        0.4231282293237487,
+        0.41280306821790586,
+        0.4117443611641327,
+        0.41857712503673866
+    ],
+    "cv_mean": 0.41708436701751356,
+    "cv_std": 0.004241407519958356,
+    "rule_counts": [
+        64,
+        48,
+        61,
+        45,
+        70
+    ],
+    "per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.222,
+            "Recall": 0.23,
+            "F1": 0.226
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.513,
+            "Recall": 0.623,
+            "F1": 0.563
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.471,
+            "Recall": 0.4,
+            "F1": 0.432
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.058,
+            "Recall": 0.201,
+            "F1": 0.09
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.417,
+            "Recall": 0.205,
+            "F1": 0.275
+        }
+    ],
+    "random_seed": 521,
+    "thresholds": {
+        "min_support": 0.005,
+        "min_confidence": 0.4,
+        "min_lift": 1.5
+    },
+    "undersample": true,
+    "n_configs_tested": 12
+}

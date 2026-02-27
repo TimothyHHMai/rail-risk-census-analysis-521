@@ -1,0 +1,72 @@
+{
+    "experiment": "CBA No AT (no undersampling)",
+    "model": "CBA (Classification Based on Associations)",
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Region",
+            "RUCC_Metro_Adjacency"
+        ],
+        "numeric": [],
+        "total": 5
+    },
+    "cv_folds": 5,
+    "cv_scores": [
+        0.42140645784999936,
+        0.4165234265966831,
+        0.41430748775767934,
+        0.4165643536184285,
+        0.42341122938038717
+    ],
+    "cv_mean": 0.41844259104063547,
+    "cv_std": 0.003399468209962366,
+    "rule_counts": [
+        65,
+        62,
+        64,
+        61,
+        60
+    ],
+    "per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.516,
+            "Recall": 0.759,
+            "F1": 0.614
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.441,
+            "Recall": 0.577,
+            "F1": 0.5
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.435,
+            "Recall": 0.173,
+            "F1": 0.248
+        }
+    ],
+    "random_seed": 521,
+    "thresholds": {
+        "min_support": 0.005,
+        "min_confidence": 0.4,
+        "min_lift": 1.5
+    },
+    "undersample": false,
+    "notes": "60 rules found at permissive thresholds (Phase 2 zero-rule result was at higher thresholds). Rules cover M, T, H only - zero Signal or Environmental rules."
+}
