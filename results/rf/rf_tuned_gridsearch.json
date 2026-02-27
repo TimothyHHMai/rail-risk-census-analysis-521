@@ -1,0 +1,66 @@
+{
+    "experiment": "RF GridSearchCV (5 features, no Accident Type)",
+    "model": "Random Forest",
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Region",
+            "RUCC_Metro_Adjacency"
+        ],
+        "numeric": [],
+        "total": 5
+    },
+    "cv_folds": 5,
+    "cv_scores": [
+        0.4293976855066262,
+        0.41343226798706323,
+        0.41667650825247365,
+        0.4178460567324071,
+        0.4293941523044208
+    ],
+    "cv_mean": 0.42134933415659825,
+    "cv_std": 0.006727306293888112,
+    "per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.365,
+            "Recall": 0.039,
+            "F1": 0.07
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.513,
+            "Recall": 0.774,
+            "F1": 0.617
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.456,
+            "Recall": 0.568,
+            "F1": 0.506
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.5,
+            "Recall": 0.007,
+            "F1": 0.014
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.438,
+            "Recall": 0.154,
+            "F1": 0.227
+        }
+    ],
+    "random_seed": 521,
+    "best_params": {
+        "class_weight": "None",
+        "max_depth": "None",
+        "max_features": "sqrt",
+        "min_samples_leaf": "1",
+        "n_estimators": "300"
+    },
+    "n_configurations_tested": 216
+}

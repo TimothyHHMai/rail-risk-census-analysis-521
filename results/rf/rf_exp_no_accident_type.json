@@ -1,0 +1,59 @@
+{
+    "experiment": "RF Baseline without Accident Type",
+    "model": "Random Forest",
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Region",
+            "RUCC_Metro_Adjacency"
+        ],
+        "numeric": [],
+        "total": 5
+    },
+    "cv_folds": 5,
+    "cv_scores": [
+        0.4272818452288004,
+        0.41497371281935275,
+        0.4170766814087235,
+        0.41836417218646355,
+        0.4273007790585526
+    ],
+    "cv_mean": 0.4209994381403786,
+    "cv_std": 0.005250096167876704,
+    "per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.309,
+            "Recall": 0.035,
+            "F1": 0.063
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.512,
+            "Recall": 0.778,
+            "F1": 0.617
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.453,
+            "Recall": 0.561,
+            "F1": 0.501
+        },
+        {
+            "Cause": "S",
+            "Precision": 1.0,
+            "Recall": 0.007,
+            "F1": 0.014
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.452,
+            "Recall": 0.15,
+            "F1": 0.226
+        }
+    ],
+    "random_seed": 521,
+    "notes": "Removed Accident Type. LR dropped from 0.536 to 0.409 (-0.127). Comparing RF magnitude."
+}
