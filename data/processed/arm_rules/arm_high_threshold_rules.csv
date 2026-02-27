@@ -1,0 +1,7 @@
+antecedents,predicted_cause,confidence,support,lift
+"Accident Type_Hwy-rail crossing, Track Type_Main",M,0.9980119284294234,0.09081041968162083,3.8956432286102616
+"Accident Type_Hwy-rail crossing, Track Type_Main, Weather Condition_Clear",M,0.9977753058954394,0.06490593342981187,3.8947195953890614
+"Accident Type_Hwy-rail crossing, Track Type_Main, Visibility_Day",M,0.9974842767295597,0.05738060781476122,3.8935835911319066
+"Accident Type_Hwy-rail crossing, Visibility_Day",M,0.9969325153374232,0.05879160636758321,3.8914298437969745
+Accident Type_Hwy-rail crossing,M,0.9969135802469136,0.0934876989869754,3.891355932498897
+"Accident Type_Hwy-rail crossing, Weather Condition_Clear",M,0.9962466487935656,0.06722141823444283,3.888752629946922
