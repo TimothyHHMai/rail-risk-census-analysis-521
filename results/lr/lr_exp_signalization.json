@@ -1,0 +1,59 @@
+{
+    "experiment": "LR with Signalization",
+    "model": "Logistic Regression",
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Signalization",
+            "Visibility",
+            "Region"
+        ],
+        "numeric": [
+            "RUCC_2023"
+        ],
+        "total": 5
+    },
+    "cv_folds": 5,
+    "cv_scores": [
+        0.3857310579175298,
+        0.37356687559467666,
+        0.37570117403765785,
+        0.3790608835563578,
+        0.37701333822311256
+    ],
+    "cv_mean": 0.378214665865867,
+    "cv_std": 0.004161130075705187,
+    "per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.469,
+            "Recall": 0.825,
+            "F1": 0.598
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.453,
+            "Recall": 0.499,
+            "F1": 0.475
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.426,
+            "Recall": 0.052,
+            "F1": 0.093
+        }
+    ],
+    "random_seed": 521
+}

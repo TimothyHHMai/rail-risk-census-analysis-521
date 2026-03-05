@@ -1,0 +1,76 @@
+{
+    "experiment": "LR GridSearchCV (L-BFGS, L2)",
+    "model": "Logistic Regression",
+    "features": {
+        "categorical": [
+            "Weather Condition",
+            "Track Type",
+            "Visibility",
+            "Region",
+            "RUCC_Metro_Adjacency"
+        ],
+        "numeric": [],
+        "total": 5
+    },
+    "cv_folds": 5,
+    "cv_scores": [
+        0.41614203322826704,
+        0.40702147758054646,
+        0.4082674987177788,
+        0.4114133611417609,
+        0.40241827875498304
+    ],
+    "cv_mean": 0.40905252988466734,
+    "cv_std": 0.004573605084179435,
+    "per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.504,
+            "Recall": 0.802,
+            "F1": 0.619
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.441,
+            "Recall": 0.576,
+            "F1": 0.499
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.462,
+            "Recall": 0.085,
+            "F1": 0.144
+        }
+    ],
+    "random_seed": 521,
+    "best_params": {
+        "classifier__C": 1.0,
+        "classifier__class_weight": null
+    },
+    "param_grid_searched": {
+        "classifier__C": [
+            "0.01",
+            "0.1",
+            "0.5",
+            "1.0",
+            "5.0",
+            "10.0"
+        ],
+        "classifier__class_weight": [
+            "None",
+            "balanced"
+        ]
+    }
+}
