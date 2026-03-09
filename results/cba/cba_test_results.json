@@ -1,0 +1,41 @@
+{
+    "experiment": "CBA Final Test Evaluation",
+    "model": "CBA",
+    "test_f1": 0.39108513980802767,
+    "cv_mean": 0.41708436701751356,
+    "cv_std": 0.004241407519958356,
+    "cv_test_delta": -0.025999227209485887,
+    "test_per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.215,
+            "Recall": 0.241,
+            "F1": 0.227
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.471,
+            "Recall": 0.731,
+            "F1": 0.573
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.508,
+            "Recall": 0.281,
+            "F1": 0.362
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.039,
+            "Recall": 0.069,
+            "F1": 0.05
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.395,
+            "Recall": 0.151,
+            "F1": 0.218
+        }
+    ],
+    "random_seed": 521
+}

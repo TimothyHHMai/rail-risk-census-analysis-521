@@ -1,0 +1,41 @@
+{
+    "experiment": "Random Forest Final Test Evaluation",
+    "model": "Random Forest",
+    "test_f1": 0.42022430693043855,
+    "cv_mean": 0.42134933415659825,
+    "cv_std": 0.006727306293888112,
+    "cv_test_delta": -0.0011250272261597027,
+    "test_per_class_metrics": [
+        {
+            "Cause": "E",
+            "Precision": 0.321,
+            "Recall": 0.034,
+            "F1": 0.061
+        },
+        {
+            "Cause": "H",
+            "Precision": 0.506,
+            "Recall": 0.767,
+            "F1": 0.61
+        },
+        {
+            "Cause": "M",
+            "Precision": 0.462,
+            "Recall": 0.59,
+            "F1": 0.518
+        },
+        {
+            "Cause": "S",
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0
+        },
+        {
+            "Cause": "T",
+            "Precision": 0.406,
+            "Recall": 0.123,
+            "F1": 0.189
+        }
+    ],
+    "random_seed": 521
+}
