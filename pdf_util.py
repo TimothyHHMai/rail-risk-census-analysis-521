@@ -9,23 +9,23 @@ import os
 
 NOTEBOOKS = [
     # Phase 1
-    'notebooks/phase-1-proposal.ipynb',
+    'notebooks/shared/01_proposal_shared.ipynb',
 
     # Phase 2
-    'notebooks/phase-2-cause-code-eda.ipynb',
+    'notebooks/shared/02_eda_shared.ipynb',
 
     # Phase 3 - Baselines
-    'notebooks/phase-3-log-reg-modeling.ipynb',
-    'notebooks/phase-3-rand-forest-modeling.ipynb',
-    'notebooks/phase-3-arm-cba-modeling.ipynb',
+    'notebooks/classification/03a_log_reg_baseline.ipynb',
+    'notebooks/classification/03b_arm_cba_baseline.ipynb',
+    'notebooks/classification/03c_rand_forest_baseline.ipynb',
 
-    # Phase 3 - Tuning
-    'notebooks/lr-tuning-experiments.ipynb',
-    'notebooks/rf-tuning-experiments.ipynb',
-    'notebooks/cba-tuning-experiments.ipynb',
+    # Phase 4 - Tuning
+    'notebooks/classification/04a_log_reg_tuning.ipynb',
+    'notebooks/classification/04b_arm_cba_tuning.ipynb',
+    'notebooks/classification/04c_rand_forest_tuning.ipynb',
 
-    # Phase 3 - Final
-    'notebooks/final-evaluation.ipynb',
+    # Phase 5 - Final
+    'notebooks/classification/05_final_classification_eval.ipynb',
 ]
 
 OUTPUT_DIR = 'pdfs'
