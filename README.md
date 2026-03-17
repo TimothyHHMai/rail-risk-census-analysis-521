@@ -51,31 +51,9 @@ We have decided on combining two datasets: the FRA railroad accident data (Form 
 * Timothy Mai
 * Dave Woodford
 * Phillip Roman
+* Matt Dolin
 
 ---
 ---
 
-# Appendix: DSCI 611 Professor's Recommended Setup (Advanced)
-*The following is from the course template. It includes instructions for using `uv` and `pre-commit` hooks if the team decides to adopt them.*
-
-## Development Environment & Setup
-
-### Software Setup
-This template is designed to work with the following tools:
--   **Visual Studio Code** for editing.
--   **[`uv`](https://astral.sh/uv/)** for managing Python environments and dependencies. (See: [uv All the Way: Your Go-to Python](https://www.marvelousmlops.io/p/uv-all-the-way-your-go-to-python))
--   **`pre-commit`** for enforcing source code formatting. (See: [Welcome to Pre-commit Heaven](https://www.marvelousmlops.io/p/welcome-to-pre-commit-heaven?utm_source=publication-search))
-
-### Installation (using uv)
-1.  Install `uv`:
-    -   Mac: `brew install uv pre-commit`
-    -   Windows: `winget install astral-sh.uv`
-2.  Install project dependencies:
-    ```console
-    $ uv sync
-    $ . ./.venv/bin/activate
-    ```
-3.  Set up `pre-commit`:
-    ```console
-    $ pre-commit install
     ```
