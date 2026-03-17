@@ -1,59 +1,114 @@
 # Urban/Rural Railroad Risk Analysis
-## DSCI 521 Group Project
+## DSCI 521 Group Project - Drexel University
 
-An analysis of railroad accident risk profiles across urban and rural environments by combining FRA accident data with US Census Bureau population metrics.
+An analysis of railroad accident risk profiles across urban and rural environments by combining FRA accident data with USDA Rural-Urban Continuum Codes.
 
-## Description
-We have decided on combining two datasets: the FRA railroad accident data (Form 54) and US Census data to analyze urban/rural risk for railroads. We will combine or merge the data on the County FIPS code.
+## Project Overview
 
-## Data Sources
-*Original links provided by team:*
+Starting from a shared proposal and EDA, the project split into two parallel analysis tracks:
 
-* **Railroad Dataset (FRA Form 54):**
-    [Rail Equipment Accident/Incident Data](https://data.transportation.gov/Railroads/Rail-Equipment-Accident-Incident-Data-Form-54-/85tf-25kj/about_data)
-* **Census Dataset (USDA RUCC):**
-    [USDA Rural-Urban Continuum Codes](https://www.ers.usda.gov/data-products/rural-urban-continuum-codes)
+**Classification (Phillip Roman & Dave Woodford):** Can environmental and operational features predict railroad accident cause categories? Three models compared: Association Rule Mining + Classification Based on Associations (ARM-CBA), Logistic Regression, and Random Forest.
+
+**Regression (Timothy Mai & Matt Dolin):** Predicting accident damage costs using feature selection and regression modeling.
+
+Both tracks use the same FRA Form 54 dataset and shared EDA.
 
 ## Directory Structure
-* `data/`: Raw and processed datasets. **Note:** Please ZIP all CSVs before uploading.
-* `notebooks/`: Main analysis steps
-* `src/`: Python scripts and helper modules
-* `explore/`: Experimental or scratchpad notebooks
-* `results/`: Final figures and tables
-* `scratch/`: Local temporary files (not synced)
+
+```
+.
+├── data/
+│   ├── raw/                          # Original source data
+│   ├── processed/                    # Cleaned and engineered data
+│   │   └── arm_rules/                # ARM rules saved as CSV artifacts
+│   └── splits/                       # Train/test splits (80/20, stratified)
+├── notebooks/
+│   ├── shared/                       # Shared proposal and EDA
+│   │   ├── 01_proposal_shared.ipynb
+│   │   └── 02_eda_shared.ipynb
+│   ├── classification/               # Classification analysis (Phillip & Dave)
+│   │   ├── 03a_log_reg_baseline.ipynb
+│   │   ├── 03b_arm_cba_baseline.ipynb
+│   │   ├── 03c_rand_forest_baseline.ipynb
+│   │   ├── 04a_log_reg_tuning.ipynb
+│   │   ├── 04b_arm_cba_tuning.ipynb
+│   │   ├── 04c_rand_forest_tuning.ipynb
+│   │   ├── 05_final_classification_eval.ipynb
+│   │   ├── models/                   # Saved baseline and tuned model pickles
+│   │   ├── results/                  # Experiment results as JSON (lr/, rf/, cba/)
+│   │   ├── prompts/                  # AI usage documentation (one per notebook)
+│   │   ├── pdfs/                     # PDF exports of all shared and classification notebooks
+│   │   └── pdf_util.py              # Script to regenerate all PDFs
+│   └── regression/                   # Regression analysis (Timothy & Matt)
+│       ├── cost_eda.ipynb
+│       ├── cost_prediction.ipynb
+│       └── featureSelection.ipynb
+├── explore/                          # Experimental and scratchpad notebooks
+├── requirements.txt
+└── README.md
+```
+
+## Notebook Guide
+
+### Shared (Both Teams)
+1. `01_proposal_shared.ipynb` - Project proposal, data loading, initial merge
+2. `02_eda_shared.ipynb` - Exploratory data analysis, feature engineering, Chi-Square tests, train/test split creation
+
+### Classification (Phillip & Dave)
+
+**Baselines (Phase 3):**
+
+3. `03a_log_reg_baseline.ipynb` - Logistic Regression baseline with 6 features
+4. `03b_arm_cba_baseline.ipynb` - ARM rule mining (Part 1) and CBA classification (Part 2) with Cramer's V verification of Accident Type dominance
+5. `03c_rand_forest_baseline.ipynb` - Random Forest baseline as nonlinear benchmark
+
+**Tuning (Phase 3):**
+
+6. `04a_log_reg_tuning.ipynb` - Feature selection experiments (Accident Type removal, Track Type vs Signalization, RUCC encoding), GridSearchCV, L1 sparsity analysis
+7. `04b_arm_cba_tuning.ipynb` - Undersampling for minority class rule mining, threshold grid search
+8. `04c_rand_forest_tuning.ipynb` - Feature importance redistribution, GridSearchCV (216 configurations)
+
+**Final Evaluation:**
+
+9. `05_final_classification_eval.ipynb` - Side-by-side comparison of all three tuned models on the locked test set. No model training is performed in this notebook. The test set was locked throughout all baseline and tuning experiments and opened only here for final evaluation.
+
+**Artifacts:**
+- Baseline and tuned model pipelines saved as pickle files in `notebooks/classification/models/`
+- Experiment results saved as JSON in `notebooks/classification/results/` (organized by `lr/`, `rf/`, `cba/`)
+- ARM rules saved as CSV in `data/processed/arm_rules/`
+- PDF exports of all shared and classification notebooks available in `notebooks/classification/pdfs/` (regenerate with `python pdf_util.py`)
+
+### Regression (Timothy & Matt)
+- `cost_eda.ipynb` - Damage cost exploratory analysis
+- `cost_prediction.ipynb` - Cost prediction modeling
+- `featureSelection.ipynb` - Feature selection for regression
+
+## Data Sources
+
+- **FRA Form 54:** [Rail Equipment Accident/Incident Data](https://data.transportation.gov/Railroads/Rail-Equipment-Accident-Incident-Data-Form-54-/85tf-25kj/about_data) - 34,551 railroad accidents (2012-2024)
+- **USDA RUCC 2023:** [Rural-Urban Continuum Codes](https://www.ers.usda.gov/data-products/rural-urban-continuum-codes) - County-level urban/rural classification
+
+## AI Usage
+
+Classification notebooks were created with assistance from Claude AI (Anthropic). Each classification notebook has a corresponding `prompt.md` in `notebooks/classification/prompts/` documenting author contributions and AI contributions. The shared notebooks and regression notebooks were not AI-assisted.
+
+## Authors
+
+- **Phillip Roman** - Classification
+- **Dave Woodford** - Classification
+- **Timothy Mai** - Regression
+- **Matt Dolin** - Regression
 
 ## Getting Started
 
-### Prerequisites
-* Python 3.8+
-* `pandas`, `requests`, `census`
-
-### Installation & Setup
-
-1.  **Clone the repository:**
+1. Clone the repository:
     ```bash
-    git clone [https://github.com/TimothyHHMai/rail-risk-census-analysis-521.git](https://github.com/TimothyHHMai/rail-risk-census-analysis-521.git)
+    git clone https://github.com/TimothyHHMai/rail-risk-census-analysis-521.git
     ```
 
-2.  **Download the Data (Step 1):**
-    * Download the CSVs from the links in the **Data Sources** section above.
-
-3.  **Organize the Data (Step 2):**
-    * Move the downloaded CSV files into the `data/raw/` folder.
-    * *Note: If you plan to push data to GitHub, please compress the CSVs into .zip format first.*
-
-4.  **Install Dependencies:**
+2. Install dependencies:
     ```bash
-    pip install pandas requests census
+    pip install -r requirements.txt
     ```
 
-## Authors
-* Timothy Mai
-* Dave Woodford
-* Phillip Roman
-* Matt Dolin
-
----
----
-
-    ```
+3. Data files are included in `data/raw/` as compressed CSVs.
