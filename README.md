@@ -40,9 +40,10 @@ Both tracks use the same FRA Form 54 dataset and shared EDA.
 │   │   ├── pdfs/                     # PDF exports of all shared and classification notebooks
 │   │   └── pdf_util.py              # Script to regenerate all PDFs
 │   └── regression/                   # Regression analysis (Timothy & Matt)
-│       ├── cost_eda.ipynb
 │       ├── cost_prediction.ipynb
 │       └── featureSelection.ipynb
+│       ├── models/                   # Saved regression models
+│       └── pdfs/                     # PDF exports of all shared and classification notebooks
 ├── explore/                          # Experimental and scratchpad notebooks
 ├── requirements.txt
 └── README.md
@@ -78,10 +79,25 @@ Both tracks use the same FRA Form 54 dataset and shared EDA.
 - ARM rules saved as CSV in `data/processed/arm_rules/`
 - PDF exports of all shared and classification notebooks available in `notebooks/classification/pdfs/` (regenerate with `python pdf_util.py`)
 
+**Challenges/Limitations:**
+- Accident cause code class imbalance made it difficult to predict signal and environmental accidents
+- Undersampling to mine rules for rare cause codes lowered model performance for predicting more common accident causes
+- ARM/CBA models were trained using only the top 6 features
+
 ### Regression (Timothy & Matt)
-- `cost_eda.ipynb` - Damage cost exploratory analysis
-- `cost_prediction.ipynb` - Cost prediction modeling
+
+**Notebooks:**
 - `featureSelection.ipynb` - Feature selection for regression
+- `cost_prediction.ipynb` - Cost prediction EDA and modeling
+
+**Artifacts:**
+- Compressed models saved as joblib files in `notebooks/regression/models`
+- PDF exports of all regression notebooks available in `notebooks/regression/pdfs/`
+
+**Challenges:**
+- Nonlinear relationships between features and target (log of total damage cost) resulted in higher error and lower R2 scores
+- More complex models tended to overfit on the training data and perform poorly on the testing data. This mostly applied to the decision tree regressor, though it was also true for some neural network architectures
+- The damage costs for accidents of each cause code correlated with different features, which made it difficult to accurately predict costs for all accidents in a single model
 
 ## Data Sources
 
